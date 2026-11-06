@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Um Lugar Bem Longe Daqui | Universo Literário</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --rosa: #c9827d;
+    --rosa-claro: #efd5ca;
+    --creme: #fff9f3;
+    --fundo: #f8eee7;
+    --marrom: #55443d;
+    --texto: #493c36;
+    --destaque: #a9625d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.8;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+    background: var(--rosa);
+    color: var(--creme);
+    text-align: center;
+    padding: 20px;
+}
+
+header p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+nav {
+    background: #f1dcd1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: #704b46;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #b45f59;
+    text-decoration: underline;
+}
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    color: white;
+    background:
+        linear-gradient(#403b315c, #403b3175),
+        url('https://m.media-amazon.com/images/M/MV5BOTVkYzE4ZDAtNTQ0MC00OTlmLWE2ZTMtMmJhZDUyZGFkMTdjXkEyXkFqcGc@._V1_.jpg')
+        center/cover;
+}
+
+.hero div {
+    max-width: 760px;
+}
+
+.hero .pequeno {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    margin: 18px 0;
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 25px;
+    font-size: 17px;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--rosa);
+    color: white;
+    padding: 11px 23px;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #a9605a;
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 70px 20px;
+    scroll-margin-top: 65px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 36px;
+    color: var(--destaque);
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #8b7770;
+    margin-bottom: 35px;
+}
+
+.linha {
+    width: 65px;
+    height: 2px;
+    background: var(--rosa);
+    margin: 20px auto 30px;
+}
+
+.texto-central {
+    max-width: 820px;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+.claro {
+    background: var(--creme);
+}
+
+.detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card {
+    background: var(--creme);
+    border: 1px solid #ead8cd;
+    border-radius: 5px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px #674b4015;
+}
+
+.card h3 {
+    font-size: 23px;
+    color: var(--destaque);
+    margin-bottom: 10px;
+}
+
+.etiqueta {
+    color: #b77a6f;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.ficha {
+    background: var(--rosa-claro);
+}
+
+.ficha-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 760px;
+    margin: auto;
+}
+
+.ficha-item {
+    background: #fff9f3b8;
+    padding: 15px 18px;
+    border-left: 3px solid var(--rosa);
+}
+
+.ficha-item strong {
+    color: var(--destaque);
+}
+
+.livro {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 5px;
+}
+
+.capa {
+    max-width: 250px;
+    min-height: 250px;
+    width: 100%;
+    margin: auto;
+    padding: 35px 22px;
+    color: #fff8ee;
+    text-align: center;
+    background: linear-gradient(150deg, #cf8b83, #e9b8a4, #bd786d);
+    box-shadow: 8px 10px 20px #674b4030;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.capa .autora {
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.capa h3 {
+    font-size: 34px;
+}
+
+.capa small {
+    letter-spacing: 2px;
+}
+
+.livro-texto h2 {
+    color: var(--destaque);
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.livro-texto p {
+    margin-bottom: 15px;
+}
+
+.nota {
+    color: #796a63;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.autora-fundo {
+    background: #ead0c3;
+}
+
+.autora-conteudo {
+    max-width: 820px;
+    margin: auto;
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.galeria figure {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #ead8cd;
+    padding-bottom: 12px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.galeria figure:hover img {
+    transform: scale(1.04);
+}
+
+.galeria figcaption {
+    padding: 12px 12px 0;
+    text-align: center;
+    color: var(--destaque);
+    font-size: 14px;
+}
+
+.citacao {
+    background: var(--rosa);
+    color: var(--creme);
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.citacao blockquote {
+    max-width: 780px;
+    margin: auto;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(23px, 4vw, 32px);
+    font-style: italic;
+}
+
+.citacao small {
+    display: block;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.comparacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.comparacao .card {
+    background: #fffaf6;
+}
+
+.trailer {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 25px;
+    border: 0;
+    background: #e8d3c7;
+}
+
+.opiniao {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background: #fffaf6;
+    border-left: 4px solid var(--rosa);
+}
+
+.quiz {
+    max-width: 760px;
+    margin: auto;
+}
+
+.pergunta {
+    background: #fffaf6;
+    border: 1px solid #ead8cd;
+    padding: 23px;
+    margin-bottom: 18px;
+    border-radius: 4px;
+}
+
+.pergunta h3 {
+    color: var(--destaque);
+    font-size: 19px;
+    margin-bottom: 13px;
+}
+
+.pergunta label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 20px;
+    background: #efd5ca;
+    display: none;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+footer {
+    background: var(--marrom);
+    color: var(--creme);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media (max-width: 750px) {
+    .detalhes,
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .livro {
+        grid-template-columns: 1fr;
+    }
+
+    .comparacao {
+        grid-template-columns: 1fr;
+    }
+
+    .ficha-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        position: static;
+    }
+
+    section {
+        padding: 48px 18px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .livro-texto h2 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <p>Literatura • Cinema • Natureza</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#historia">História</a>
+    <a href="#autora">Autora</a>
+    <a href="#personagens">Personagens</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#livro-filme">Livro × Filme</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#comprar">Onde encontrar</a>
+</nav>
+
+<main>
+
+<!-- 1. ABERTURA -->
+
+<section class="hero" id="inicio">
+    <div>
+        <p class="pequeno">Uma história de mistério e sobrevivência</p>
+        <h1>Um Lugar Bem Longe Daqui</h1>
+        <p>
+            Entre os segredos da natureza, a solidão e os mistérios do
+            passado, conheça uma história que mostra a força de uma jovem
+            que aprendeu a sobreviver por conta própria.
+        </p>
+        <a href="#historia" class="botao">Explore a história</a>
+    </div>
+</section>
+
+<!-- 2. INTRODUÇÃO -->
+
+<section id="historia">
+    <div class="container">
+        <h2 class="titulo">Sobre a história</h2>
+        <div class="linha"></div>
+
+        <p class="texto-central">
+            <strong>Um Lugar Bem Longe Daqui</strong> é um romance de
+            Delia Owens que mistura drama, romance e mistério. A história
+            acompanha Kya Clark, uma menina que cresce praticamente sozinha
+            nos pântanos da Carolina do Norte, nos Estados Unidos. Enquanto
+            encontra abrigo na natureza, ela enfrenta o preconceito dos
+            moradores da cidade e descobre o amor. Quando um jovem é
+            encontrado morto, Kya passa a ser envolvida em uma investigação
+            que pode mudar sua vida para sempre.
+        </p>
+    </div>
+</section>
+
+<!-- 3. FICHA TÉCNICA -->
+
+<section class="ficha">
+    <div class="container">
+        <h2 class="titulo">Ficha técnica</h2>
+        <p class="subtitulo">Informações sobre a obra literária</p>
+
+        <div class="ficha-grid">
+            <div class="ficha-item">
+                <strong>Título:</strong> Um Lugar Bem Longe Daqui
+            </div>
+            <div class="ficha-item">
+                <strong>Autora:</strong> Delia Owens
+            </div>
+            <div class="ficha-item">
+                <strong>Gêneros:</strong> Romance, drama e mistério
+            </div>
+            <div class="ficha-item">
+                <strong>Editora brasileira:</strong> Intrínseca
+            </div>
+            <div class="ficha-item">
+                <strong>Publicação original:</strong> 2018
+            </div>
+            <div class="ficha-item">
+                <strong>Adaptação cinematográfica:</strong> 2022
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. SOBRE A AUTORA -->
+
+<section id="autora">
+    <div class="autora-conteudo">
+        <h2 class="titulo">Conheça a autora</h2>
+        <div class="linha"></div>
+
+        <p>
+            Delia Owens é uma escritora e naturalista norte-americana.
+            Seu interesse pela vida selvagem e pela natureza aparece
+            de maneira marcante em sua obra. Em
+            <em>Um Lugar Bem Longe Daqui</em>, ela combina a observação
+            do ambiente natural com uma narrativa sobre relações humanas,
+            isolamento e investigação criminal.
+        </p>
+    </div>
+</section>
+
+<!-- 5. PERSONAGENS -->
+
+<section class="claro" id="personagens">
+    <div class="container">
+        <h2 class="titulo">Personagens principais</h2>
+        <p class="subtitulo">Conheça quem dá vida a essa história</p>
+
+        <div class="detalhes">
+            <article class="card">
+                <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/04/um-lugar-bem-longe-daqui.jpg?w=1200&h=900&crop=1" height="300" width="370" alt="">
+                <p class="etiqueta">Protagonista</p>
+                <h3>Kya Clark</h3>
+                <p>
+                    Conhecida como a Menina do Brejo, Kya cresce isolada
+                    e aprende a sobreviver sozinha. É observadora,
+                    independente e profundamente ligada à natureza.
+                </p>
+            </article>
+
+            <article class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYjY1YzE5MzQtOTdmYy00ODgwLWJlNjUtZTA1MmQwYWI0NmNlXkEyXkFqcGc@._V1_.jpg" height="300" width="370" alt="">
+                <p class="etiqueta">Primeiro amor</p>
+                <h3>Tate Walker</h3>
+                <p>
+                    Tate compartilha o interesse de Kya pela natureza
+                    e se aproxima dela. Sua relação com a protagonista
+                    representa carinho, confiança e companheirismo.
+                </p>
+            </article>
+
+            <article class="card">
+                <img src="https://i0.wp.com/www.corujageek.com/wp-content/uploads/2022/09/Where-the-Crawdads-Sing-2-1024x683.jpg?ssl=1" height="310" width="370" alt="">
+                <p class="etiqueta">Personagem central do mistério</p>
+                <h3>Chase Andrews</h3>
+                <p>
+                    Chase é um jovem popular da cidade. Sua relação
+                    com Kya e sua morte estão no centro dos acontecimentos
+                    que conduzem a investigação.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- 6. GALERIA -->
+
+<section id="galeria">
+    <div class="container">
+        <h2 class="titulo">Galeria de inspiração</h2>
+        <p class="subtitulo">
+            Paisagens que lembram a atmosfera do livro e do filme
+        </p>
+
+        <div class="galeria">
+            <figure>
+                <img
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiBPgs-PjHUYgaBUSqVlbpW0Fav3C15KRNkHJzn4IbZ9Y9W34u08OaKdEqneCikBwUs_JQ_-j2wJk3ZzDSG2lu6qthOMbgArfq1V4GWDajEspozVeDaL7rIGbtQ_hessSIJn444jxZIVZxnPlXfHst06AxP2VRLknGFsETPDT-6L9iNmMv4Rf_YOBfbA/s1600/Um%20lugar%20bem%20longe%20daqui_Sony%20Pictures%20(5).jpg"
+                    alt="Paisagem natural com montanhas e água">
+                <figcaption>A natureza como refúgio</figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80"
+                    alt="Água em movimento em uma paisagem natural">
+                <figcaption>O silêncio das águas</figcaption>
+            </figure>
+
+            <figure>
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+                    alt="Luz do sol atravessando uma floresta">
+                <figcaption>Entre os mistérios da natureza</figcaption>
+            </figure>
+        </div>
+
+        <p class="nota" style="text-align:center">
+        </p>
+    </div>
+</section>
+
+<!-- 7. CURIOSIDADES -->
+
+<section class="claro" id="curiosidades">
+    <div class="container">
+        <h2 class="titulo">Curiosidades sobre a obra</h2>
+        <p class="subtitulo">Detalhes que tornam a história especial</p>
+
+        <div class="detalhes">
+            <article class="card">
+                <h3>O cenário</h3>
+                <p>
+                    Os pântanos da Carolina do Norte têm grande importância
+                    na narrativa. Eles representam o lar de Kya e estão
+                    ligados à sua identidade e ao seu modo de viver.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>A natureza</h3>
+                <p>
+                    Kya observa animais, plantas e o ambiente ao seu redor.
+                    Seu conhecimento da natureza ajuda a mostrar como ela
+                    desenvolve independência mesmo vivendo isolada.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Do livro ao cinema</h3>
+                <p>
+                    O sucesso do romance levou à adaptação cinematográfica
+                    de 2022, que apresenta a trajetória de Kya e o mistério
+                    central para um novo público.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Uma mistura de gêneros</h3>
+                <p>
+                    A obra combina elementos de romance, drama,
+                    amadurecimento e investigação criminal, mantendo
+                    o leitor curioso sobre o que realmente aconteceu.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Preconceito e isolamento</h3>
+                <p>
+                    A maneira como os moradores julgam Kya mostra como
+                    a aparência, a origem e a falta de convivência social
+                    podem influenciar a forma como alguém é tratado.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Uma história de resistência</h3>
+                <p>
+                    Mesmo enfrentando dificuldades, Kya encontra maneiras
+                    de aprender, crescer e construir sua própria vida.
+                    Sua trajetória é uma parte central da narrativa.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- 8. FRASE TEMÁTICA -->
+
+<section class="citacao">
+    <blockquote>
+        “Ele entende que todas as criaturas fazem
+        o que é preciso para sobreviver. E que, 
+        às vezes, para que a presa viva... seu predador precisa morrer.”
+    </blockquote>
+    <small>
+        Kya Clark (menina do brejo)
+    </small>
+</section>
+
+<!-- 9. LIVRO X FILME -->
+
+<section id="livro-filme">
+    <div class="container">
+        <h2 class="titulo">Livro × Filme</h2>
+        <p class="subtitulo">
+            Duas maneiras de conhecer a história de Kya
+        </p>
+
+        <div class="comparacao">
+            <article class="card">
+                <p class="etiqueta">A obra original</p>
+                <h3>O livro</h3>
+                <p>
+                    O romance permite acompanhar com mais profundidade
+                    os pensamentos, as lembranças e os sentimentos de Kya.
+                    A narrativa explora sua relação com a natureza e os
+                    acontecimentos que marcaram sua infância.
+                </p>
+            </article>
+
+            <article class="card">
+                <p class="etiqueta">A adaptação</p>
+                <h3>O filme</h3>
+                <p>
+                    O filme transforma a história em imagens, destacando
+                    as paisagens, os relacionamentos e a investigação.
+                    Algumas situações e detalhes podem ser apresentados
+                    de maneira diferente da versão escrita.
+                </p>
+            </article>
+        </div>
+
+        <div style="margin-top:30px; text-align:center">
+            <p>
+                <strong>Qual vale mais a pena?</strong><br>
+                Ler o livro e depois assistir ao filme é uma ótima forma
+                de perceber como uma mesma história pode ser contada
+                de maneiras diferentes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 10. TRAILER -->
+
+<section class="claro" id="trailer">
+    <div class="container trailer">
+        <h2 class="titulo">Assista ao trailer</h2>
+        <p class="subtitulo">
+            Conheça a atmosfera da adaptação cinematográfica
+        </p>
+
+        <a
+            class="botao"
+            href="https://www.youtube.com/watch?v=EB28AnlIDqo"
+            target="_blank"
+            rel="noopener noreferrer">
+            Trailer no YouTube
+        </a>
+
+        <p class="nota">
+            O botão abre uma busca pelo trailer. Escolha o vídeo
+            oficial disponível na plataforma.
+        </p>
+    </div>
+</section>
+
+<!-- 11. OPINIÃO -->
+
+<section id="opiniao">
+    <div class="container">
+        <h2 class="titulo">Por que conhecer essa obra?</h2>
+        <p class="subtitulo">Uma sugestão de leitura</p>
+
+        <div class="opiniao">
+            <p>
+                <em>Um Lugar Bem Longe Daqui</em> É uma ótima sugestão de leitura. A obra apresenta uma história envolvente, com personagens marcantes e cenários que aproximam o leitor da natureza. Ao longo da narrativa, são abordados temas como solidão, preconceito e superação, despertando a curiosidade a cada capítulo. É uma leitura indicada para quem gosta de histórias cheias de emoções, reflexões e surpresas, sem perder o encanto do mistério.
+            <p style="margin-top:15px">
+                É uma obra que pode despertar curiosidade tanto em quem
+                gosta de livros quanto em quem prefere adaptações para
+                o cinema.
+            </p>
+        </div>
+</section>
+
+<!-- 12. QUIZ INTERATIVO -->
+
+<section class="ficha" id="quiz">
+    <div class="container">
+        <h2 class="titulo">Teste seus conhecimentos</h2>
+        <p class="subtitulo">
+            Você prestou atenção na história?
+        </p>
+
+        <form class="quiz" id="formQuiz">
+
+            <div class="pergunta">
+                <h3>1. Quem é a protagonista da história?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    Olivia Newman
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    Kya Clark
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    Delia Owens
+                </label>
+            </div>
+
+            <div class="pergunta">
+                <h3>2. Quem escreveu o livro?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    Daisy Edgar-Jones
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    Olivia Newman
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    Delia Owens
+                </label>
+            </div>
+
+            <div class="pergunta">
+                <h3>3. Onde Kya cresce?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    Em uma grande cidade
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    Nos pântanos da Carolina do Norte
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    Em uma ilha tropical
+                </label>
+            </div>
+
+            <div class="pergunta">
+                <h3>4. Em que ano o filme foi lançado?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    2018
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    2020
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    2022
+                </label>
+            </div>
+
+            <button type="submit" class="botao">
+                Ver minhas respostas
+            </button>
+
+            <div class="resultado" id="resultado" role="status"></div>
+
+        </form>
+    </div>
+</section>
+
+<!-- 13. ONDE ENCONTRAR -->
+
+<section id="comprar">
+    <div class="container">
+        <h2 class="titulo">Entre nesse universo</h2>
+        <p class="subtitulo">
+            Leia o livro ou procure a adaptação cinematográfica
+        </p>
+
+        <div class="livro">
+            <div class="capa">
+             <img src="https://m.media-amazon.com/images/I/81C4Pgny+xL._UF1000,1000_QL80_.jpg" alt="">
+            </div>
+
+            <div class="livro-texto">
+                <p class="etiqueta">Sua próxima leitura</p>
+                <h2>Descubra a história completa</h2>
+
+                <p>
+                    Acompanhe a trajetória de Kya, conheça seus sentimentos
+                    e tente desvendar os segredos que cercam os acontecimentos
+                    do romance.
+                </p>
+
+                <div class="links">
+                    <a
+                        class="botao"
+                        href="https://www.intrinseca.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Loja da editora
+                    </a>
+
+                    <a
+                        class="botao"
+                        href="https://www.amazon.com.br/Um-Lugar-Bem-Longe-Daqui/dp/8551004867/ref=sr_1_1?adgrpid=80439414479&dib=eyJ2IjoiMSJ9.sQUGEYaL1-XPtmdtbwwiWLpVCP9wdNaP8oYRuyzNU955Ld1znwc0cUblmJfrLdVb71pY4tLe6LDWa-GV4vl9DNq4EIFZTSxxvpBIkTvqEE3wRzK03910EaEtCNmezvmzXbQcFgENG-MABZxAtYfcsg1wPobsb-cJIx7okenOA6Xa0gNVuc_ETu3gCiSvY0NZSD_93vrjQDi81bpAe2L4-9HtetuEgZXANdRg2-9A82SD1hkH7U6GPLzLq8BvDEQDrUbCOXlXnDgffP3kiuNoHJ7XInMYSv4uB9LmxnDEFio.xRf2iEevpZWdYxl9Q7IhVpfFbgtc34eh9izMZ8y8gpg&dib_tag=se&hvadid=425986425817&hvdev=c&hvexpln=0&hvlocphy=20100&hvnetw=g&hvocijid=1861929345388144122--&hvqmt=e&hvrand=1861929345388144122&hvtargid=kwd-808837875753&hydadcr=5682_11235263&keywords=livro+um+lugar+bem+longe+daqui&mcid=45e7b782c41d399ebf98871a7847cc40&qid=1791567362&sr=8-1"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Encontrar o livro
+                    </a>
+
+                    <a
+                        class="botao"
+                        href="https://www.justwatch.com/br"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Procurar onde assistir
+                    </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h3>Um Lugar Bem Longe Daqui</h3>
+    <p>Um universo de literatura, mistério e natureza.</p>
+    <p>Livro de Delia Owens • Filme lançado em 2022</p>
+    <p style="margin-top:12px">
+        Página informativa feita para fins educacionais.
+    </p>
+</footer>
+
+<script>
+document.getElementById("formQuiz").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const respostasCorretas = {
+        q1: "b",
+        q2: "c",
+        q3: "b",
+        q4: "c"
+    };
+
+    let pontos = 0;
+    let respondidas = 0;
+
+    for (const pergunta in respostasCorretas) {
+        const resposta = document.querySelector(
+            'input[name="' + pergunta + '"]:checked'
+        );
+
+        if (resposta) {
+            respondidas++;
+
+            if (resposta.value === respostasCorretas[pergunta]) {
+                pontos++;
+            }
+        }
+    }
+
+    const resultado = document.getElementById("resultado");
+    resultado.style.display = "block";
+
+    if (respondidas < 4) {
+        resultado.innerHTML =
+            "Você respondeu " + respondidas + " de 4 perguntas. " +
+            "Responda todas para conferir seu resultado.";
+        return;
+    }
+
+    let mensagem = "";
+
+    if (pontos === 4) {
+        mensagem = "Excelente! Você conhece muito bem a obra!";
+    } else if (pontos >= 2) {
+        mensagem = "Muito bem! Você já conhece alguns detalhes da história.";
+    } else {
+        mensagem = "Que tal reler o resumo e tentar novamente?";
+    }
+
+    resultado.innerHTML =
+        "<strong>Você acertou " + pontos + " de 4 perguntas!</strong><br>" +
+        mensagem;
+});
+</script>
+
+</body>
+</html>
